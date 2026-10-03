@@ -84,3 +84,7 @@ lint:
 
 - Only files in your module are linted; imported files are skipped.
 - Rules run with api-linter's default configuration.
+
+## Credits
+
+Originally based on [googleapis/api-linter#1463](https://github.com/googleapis/api-linter/pull/1463). This version targets api-linter v2 and runs rules through api-linter's linter rather than calling them directly, so disable comments are respected.
