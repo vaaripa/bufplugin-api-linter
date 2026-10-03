@@ -23,7 +23,7 @@ func TestBuildSpec(t *testing.T) {
 		ExpectedAnnotations: []checktest.ExpectedAnnotation{
 			{
 				RuleID:  "AIP_CORE_0192_HAS_COMMENTS",
-				Message: `Missing comment over "Book".`,
+				Message: `Missing comment over "Book". See https://linter.aip.dev/192/has-comments`,
 				FileLocation: &checktest.ExpectedFileLocation{
 					FileName:    "test.proto",
 					StartLine:   2,

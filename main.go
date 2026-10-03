@@ -42,7 +42,7 @@ func buildSpec() (*check.Spec, error) {
 			{ID: allCategory, Purpose: "Checks all Google api-linter rules."},
 		},
 		Info: &info.Spec{
-			Documentation: "A liniting plugin that checks Google AIP conformance via the api-linter project",
+			Documentation: "A linting plugin that checks Google AIP conformance via the api-linter project",
 		},
 	}, nil
 }
@@ -64,7 +64,7 @@ func aipRuleToBufRule(ruleName lint.RuleName, rule lint.ProtoRule) *check.RuleSp
 		for _, r := range res {
 			for _, problem := range r.Problems {
 				writer.AddAnnotation(
-					check.WithMessage(problem.Message),
+					check.WithMessage(fmt.Sprintf("%s See %s", problem.Message, problem.GetRuleURI())),
 					check.WithDescriptor(problem.Descriptor),
 				)
 			}
