@@ -7,11 +7,29 @@ without running a separate tool.
 
 ## Installation
 
+### Prebuilt binary
+
+Download the archive for your platform from the
+[releases page](https://github.com/vaaripa/bufplugin-api-linter/releases). Binaries are published for
+`darwin/arm64`, `linux/amd64` and `linux/arm64`.
+
 ```sh
-go install gitlab.com/vaaripa/bufplugin-api-linter@latest
+VERSION=v0.1.0   # pick a release tag
+OS=linux         # linux or darwin
+ARCH=amd64       # amd64 or arm64
+curl -sSL "https://github.com/vaaripa/bufplugin-api-linter/releases/download/${VERSION}/bufplugin-api-linter_${VERSION}_${OS}_${ARCH}.tar.gz" \
+  | tar -xz -C /usr/local/bin bufplugin-api-linter
 ```
 
-This installs the `bufplugin-api-linter` binary into `$(go env GOPATH)/bin`. Make sure it is on your `$PATH`.
+### From source
+
+```sh
+go install github.com/vaaripa/bufplugin-api-linter@latest
+```
+
+This installs the binary into `$(go env GOPATH)/bin`.
+
+Either way, make sure `bufplugin-api-linter` is on your `$PATH` so `buf` can find it.
 
 ## Usage
 
