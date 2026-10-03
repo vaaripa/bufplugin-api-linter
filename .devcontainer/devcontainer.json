@@ -1,0 +1,9 @@
+{
+  "name": "bufplugin-api-linter",
+  "dockerComposeFile": "docker-compose.yaml",
+  "service": "devcontainer",
+  "shutdownAction": "stopCompose",
+  "workspaceFolder": "${localWorkspaceFolder}",
+  "initializeCommand": "./.devcontainer/initialize.sh",
+  "postCreateCommand": "./.devcontainer/postCreate.sh",
+}

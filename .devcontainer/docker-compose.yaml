@@ -1,0 +1,10 @@
+name: ${COMPOSE_PROJECT_NAME}
+services:
+  devcontainer:
+    build:
+      dockerfile: ./Dockerfile
+    user: developer
+    volumes:
+      - ${WORKSPACE_SOURCE:-./../}:${WORKSPACE_TARGET:-/workspace}
+      - ${GIT_REPO:-/dev/null}:${GIT_REPO:-/tmp/no-worktree}:rw
+    command: sleep infinity
